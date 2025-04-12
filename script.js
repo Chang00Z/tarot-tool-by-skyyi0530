@@ -179,3 +179,15 @@ resetBtn.addEventListener("click", () => {
   drawBtn.classList.remove("hidden");
   resetBtn.classList.add("hidden");
 });
+
+const toggleThemeBtn = document.getElementById("toggle-theme");
+
+toggleThemeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const isDark = document.body.classList.contains("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
