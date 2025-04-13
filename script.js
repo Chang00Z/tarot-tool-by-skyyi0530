@@ -1,3 +1,4 @@
+// 卡片資料
 const cards = [
   {
     name: "愚者",
@@ -133,6 +134,7 @@ const cards = [
   }
 ];
 
+// DOM 元素選取
 const drawBtn = document.getElementById("draw-button");
 const resetBtn = document.getElementById("reset-button");
 const cardImage = document.getElementById("card-image");
@@ -140,6 +142,7 @@ const cardName = document.getElementById("card-name");
 const cardMeaning = document.getElementById("card-meaning");
 const prompt = document.getElementById("prompt");
 
+// 隨機抽牌邏輯
 function getRandomCard() {
   const card = cards[Math.floor(Math.random() * cards.length)];
   const isReversed = Math.random() < 0.5;
@@ -151,6 +154,7 @@ function getRandomCard() {
   };
 }
 
+// 抽牌按鈕邏輯
 drawBtn.addEventListener("click", () => {
   const card = getRandomCard();
 
@@ -169,6 +173,7 @@ drawBtn.addEventListener("click", () => {
   resetBtn.classList.remove("hidden");
 });
 
+// 重抽邏輯
 resetBtn.addEventListener("click", () => {
   cardImage.classList.add("hidden");
   cardImage.style.transform = "none";
@@ -180,6 +185,8 @@ resetBtn.addEventListener("click", () => {
   resetBtn.classList.add("hidden");
 });
 
+/* 原本 dark mode 切換邏輯，已移除功能，保留註解 */
+/*
 const toggleThemeBtn = document.getElementById("toggle-theme");
 
 toggleThemeBtn.addEventListener("click", () => {
@@ -191,3 +198,4 @@ toggleThemeBtn.addEventListener("click", () => {
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
 }
+*/

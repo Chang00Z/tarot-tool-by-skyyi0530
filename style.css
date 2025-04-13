@@ -1,37 +1,75 @@
+/* 主體樣式 */
 body {
-  font-family: sans-serif;
-  background: #f6f6f9;
+  font-family: 'Noto Serif TC', serif;
+
+  /* ⬇️ 修改：改用 base64 背景圖取代 GitHub 外部連結，避免 Safari 延遲 */
+  background: linear-gradient(to bottom, #1a132f, #0f0c1c), /* 新增：神秘紫黑背景 */
+              url('data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCBmaWxsPSIjMDAwMDE4IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+CiAgPGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjgiPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIzMCIgcj0iMS41Ii8+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjYwIiByPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSI4MCIgY3k9IjIwIiByPSIxLjIiLz4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjkwIiByPSIxLjMiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjQwIiByPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSI3MCIgcj0iMS41Ii8+CiAgICA8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxMTAiIHI9IjEiLz4KICAgIDxjaXJjbGUgY3g9IjQwMCIgY3k9IjE1MCIgcj0iMS40Ii8+CiAgICA8Y2lyY2xlIGN4PSI1MDAiIGN5PSIyMDAiIHI9IjEuMyIvPgogIDwvZz4KPC9zdmc+');
+  /* ⬆️ 修改結束 */
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 
+/* 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('https://raw.githubusercontent.com/sylviapap/stars-bg/main/starry.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+} 
+⬆️ 原用 ::before 設背景，Safari 延遲嚴重，已改為 base64，保留但停用
+*/
+
 .container {
-  background: white;
+  background: rgba(39, 29, 66, 0.9);  /* 新增：深紫背景 */
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(160, 120, 255, 0.3); /* 新增：柔光效果 */
   text-align: center;
   width: 320px;
+  border: 1px solid #6a4fbf;  /* 新增：邊框 */
 }
 
 h1 {
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  color: #d6c4f5; /* 新增：紫色標題字 */
 }
 
 .card-area img {
   width: 180px;
   height: auto;
   margin-top: 1rem;
+  border: 4px solid #c1a6f2;  /* 新增：卡片邊框 */
+  border-radius: 1rem;
+  animation: fadeInOpacity 0.5s ease-in-out; /* 新增：透明淡入動畫 */
+}
+
+@keyframes fadeInOpacity {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .card-area p {
   margin-top: 1rem;
   font-size: 1rem;
+  color: #e4dbf2; /* 新增：文字改為柔紫 */
 }
 
 .button-group {
@@ -47,16 +85,24 @@ button {
   background-color: #7e57c2;
   color: white;
   cursor: pointer;
+  border: 1px solid #cbb3ff;  /* 新增：按鈕描邊 */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;  /* 新增：hover 效果 */
 }
 
 button:hover {
-  background-color: #5e35b1;
+  background-color: #9f76ec;
+  box-shadow: 0 0 8px rgba(200, 170, 255, 0.5);  /* 新增：hover 發光 */
 }
 
 .hidden {
   display: none;
 }
 
+/* 
+⬇️ 以下為原 dark mode 樣式，因目前已移除主題切換按鈕而停用，保留備用
+*/
+
+ /*
 body.dark {
   background: #1e1e1e;
   color: #eeeeee;
@@ -91,3 +137,4 @@ body.dark button:hover {
 .theme-toggle:hover {
   color: #fff;
 }
+ */
