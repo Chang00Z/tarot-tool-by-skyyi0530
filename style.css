@@ -21,21 +21,6 @@ body {
   position: relative;
 }
 
-/* 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('https://raw.githubusercontent.com/sylviapap/stars-bg/main/starry.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.1;
-  z-index: -1;
-} 
-⬆️ 原用 ::before 設背景，Safari 延遲嚴重，已改為 base64，保留但停用
-*/
-
 .container {
   background: rgba(39, 29, 66, 0.9);  /* 新增：深紫背景 */
   padding: 2rem;
@@ -97,44 +82,3 @@ button:hover {
 .hidden {
   display: none;
 }
-
-/* 
-⬇️ 以下為原 dark mode 樣式，因目前已移除主題切換按鈕而停用，保留備用
-*/
-
- /*
-body.dark {
-  background: #1e1e1e;
-  color: #eeeeee;
-}
-
-body.dark .container {
-  background: #2a2a2a;
-  box-shadow: none;
-}
-
-body.dark button {
-  background-color: #555;
-  color: #fff;
-}
-
-body.dark button:hover {
-  background-color: #777;
-}
-
-.theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #888;
-  transition: color 0.3s;
-}
-
-.theme-toggle:hover {
-  color: #fff;
-}
- */

@@ -185,17 +185,3 @@ resetBtn.addEventListener("click", () => {
   resetBtn.classList.add("hidden");
 });
 
-/* 原本 dark mode 切換邏輯，已移除功能，保留註解 */
-/*
-const toggleThemeBtn = document.getElementById("toggle-theme");
-
-toggleThemeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  const isDark = document.body.classList.contains("dark");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-});
-
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-}
-*/
