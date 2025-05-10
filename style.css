@@ -18,6 +18,7 @@ body {
   padding-bottom: 3rem;
   box-sizing: border-box;
   position: relative;
+  overflow-y: auto; /*避免內容撐爆畫面時失去置中效果*/
 }
 
 /* 主要容器 */
@@ -29,7 +30,8 @@ body {
   text-align: center;
   width: 320px;
   border: 1px solid #6a4fbf; /* 邊框 */
-  margin-top: 3.5rem; /*避免容器壓住選單點擊區*/
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* 標題 */
