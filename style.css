@@ -10,9 +10,13 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: center; /*保持水平置中*/
+  flex-direction: column; /*主軸方向設定為 column（由上而下排列）*/
+  justify-content: center; /*置中抽牌後的畫面，避免內容偏上*/
+  min-height: 100vh; /*設定最小寬度，避免抽牌後內容被壓縮*/
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -25,6 +29,7 @@ body {
   text-align: center;
   width: 320px;
   border: 1px solid #6a4fbf; /* 邊框 */
+  margin-top: 3.5rem; /*避免容器壓住選單點擊區*/
 }
 
 /* 標題 */
@@ -173,6 +178,7 @@ button:hover {
   border-color: #e2c8ff;
   box-shadow: 0 0 6px rgba(220, 180, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.06);
+  outline: none; /*移除瀏覽器預設橘色外框，避免破壞視覺風格*/
 }
 
 /* 抽牌前的使用者提示文字區塊 */
@@ -219,6 +225,7 @@ button:hover {
   top: 1rem;
   right: 1rem;
   z-index: 9999;
+  pointer-events: auto; /*確保點擊選單時不會被其他內容擋住*/
 }
 
 .menu-button {
@@ -253,6 +260,7 @@ button:hover {
   /* 避免手機點擊困難，增加最小寬度與內距 */
   min-width: 160px;
   padding: 0.25rem 0;
+  z-index: 10000; /*確保選單永遠在最上層*/
 }
 
 .menu-panel ul {
