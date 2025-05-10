@@ -1,0 +1,27 @@
+{
+  "name": "tarot-tool",
+  "version": "1.0.0",
+  "description": "塔羅抽牌工具",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyyi0530/tarot-tool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/skyyi0530/tarot-tool/issues"
+  },
+  "homepage": "https://github.com/skyyi0530/tarot-tool#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

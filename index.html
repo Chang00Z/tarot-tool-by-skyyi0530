@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>塔羅抽牌工具</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>塔羅抽牌工具</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>塔羅抽牌工具</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <div id="card-area" class="card-area">
-      <p id="prompt">請點擊下方按鈕抽牌</p>
-      <img id="card-image" class="hidden" src="" alt="抽出的牌" />
-      <p id="card-name" class="hidden"></p>
-      <p id="card-meaning" class="hidden"></p>
+  <!-- 加入 data-touch 屬性供 JS 判斷是否為觸控裝置 -->
+  <body data-touch="false">
+    <!-- 右上角切換身份選單 -->
+    <div class="menu-wrapper">
+      <div class="menu-button" id="menu-button">
+        ☰ <span class="caret">▾</span>
+      </div>
+      <div class="menu-panel hidden" id="menu-panel">
+        <div class="menu-caret"></div>
+        <ul>
+          <li onclick="switchToRoleSelect()">← 回到身份選擇</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="button-group">
-      <button id="draw-button">抽牌</button>
-      <button id="reset-button" class="hidden">再抽一次</button>
+    <!-- 身份選擇區塊，供使用者選擇角色 -->
+    <div id="role-select" class="container">
+      <h2>請選擇你的身份</h2>
+      <div class="button-group">
+        <button onclick="switchMode('user')">我是一般使用者</button>
+        <button onclick="switchMode('reader')">我是塔羅師</button>
+      </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <!-- 一般使用者模式 -->
+    <div id="user-mode" class="container hidden">
+      <h1>塔羅抽牌工具</h1>
+      <!-- 抽牌後，此區塊隱藏 -->
+      <div class="question-area">
+        <label for="user-question">請輸入你的問題：</label>
+        <textarea
+          id="user-question"
+          placeholder="例如：我該換工作嗎"
+        ></textarea>
+      </div>
+
+      <div id="card-area" class="card-area">
+        <p id="prompt">請點擊下方按鈕抽牌</p>
+        <img id="card-image" class="hidden" src="" alt="抽出的牌" />
+        <p id="card-name" class="hidden"></p>
+        <!-- 使用者問題的靜態顯示區塊，抽牌後顯示提問內容 -->
+        <div
+          id="user-question-display"
+          class="user-question-display hidden"
+        ></div>
+        <!-- 牌義區，一般使用者僅顯示 AI 回覆區塊 -->
+        <p id="card-meaning" class="hidden"></p>
+        <p id="ai-response" class="hidden"></p>
+      </div>
+
+      <!-- 抽牌按鈕預設為 disables，待牌卡載入完成再啟用 -->
+      <div class="button-group">
+        <button id="draw-button" disabled>抽牌</button>
+        <button id="reset-button" class="hidden">再抽一次</button>
+      </div>
+    </div>
+
+    <!-- 塔羅師模式：無輸入問題與 AI 回覆 -->
+    <div id="reader-mode" class="container hidden">
+      <h1>塔羅抽牌工具</h1>
+      <p class="subtitle">（塔羅師版）</p>
+
+      <div id="reader-card-area" class="card-area">
+        <p id="reader-prompt">請點擊下方按鈕抽牌</p>
+        <img id="reader-card-image" class="hidden" src="" alt="抽出的牌" />
+        <p id="reader-card-name" class="hidden"></p>
+        <p id="reader-card-meaning" class="hidden"></p>
+      </div>
+
+      <div class="button-group">
+        <button id="reader-draw-button" disabled>抽牌</button>
+        <button id="reader-reset-button" class="hidden">再抽一次</button>
+      </div>
+    </div>
+
+    <!-- 資料載入提示：使用 Class 控制樣式，並加入提示內容 -->
+    <p id="loading-msg" class="loading-msg">牌卡資料載入中，請稍候...</p>
+
+    <!-- 主程式：擴充為可控制身份選擇與雙模式邏輯的版本 -->
+    <script src="script.js"></script>
+  </body>
 </html>
