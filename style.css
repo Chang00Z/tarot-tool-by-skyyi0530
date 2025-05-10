@@ -32,6 +32,9 @@ body {
   border: 1px solid #6a4fbf; /* 邊框 */
   margin-top: auto;
   margin-bottom: auto;
+  align-self: center; /*確保在 flex 排版中能垂直置中*/
+  max-height: calc(100vh - 5rem); /* 限制容器不要撐爆整個畫面 */
+  overflow-y: auto; /* 超過容器的部分用捲動處理 */
 }
 
 /* 標題 */
