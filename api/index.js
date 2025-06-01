@@ -23,7 +23,7 @@ app.post("/api/ask-openai", async (req, res) => {
         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o",
         messages: [{ role: "user", content: prompt }],
       }),
     });
@@ -38,6 +38,7 @@ app.post("/api/ask-openai", async (req, res) => {
 
 // For local development
 if (process.env.NODE_ENV !== "production") {
+  // host 前端檔案的資料夾 (靜態檔案)
   app.use(express.static("src"));
 
   const PORT = process.env.PORT || 3000;
@@ -47,3 +48,19 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 module.exports = app;
+
+/**
+ * http://localhost:${PORT} -> express 伺服器 ->
+ *
+ * - app.post("/api/ask-openai", ...)
+ *   http://localhost:${PORT}/api/ask-openai -> 執行 line9~39
+ *
+ * - app.use(express.static("src"))
+ *    http://localhost:${PORT}/* -> 找 src 資料夾的檔案
+ *    http://localhost:${PORT}/index.html -> index.html
+ *    http://localhost:${PORT}/style.css  -> style.css
+ *    http://localhost:${PORT}/script.js  -> script.js
+ *    http://localhost:${PORT}/cards.json -> cards.json
+ *
+ *  browser http://localhost:${PORT} -> http://localhost:${PORT}/index.html
+ */
