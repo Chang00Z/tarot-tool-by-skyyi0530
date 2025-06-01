@@ -36,11 +36,14 @@ app.post("/api/ask-openai", async (req, res) => {
   }
 });
 
-app.use(express.static("src"));
+// For local development
+if (process.env.NODE_ENV !== "production") {
+  app.use(express.static("src"));
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`伺服器已啟動：http://localhost:${PORT}`);
-});
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`伺服器已啟動：http://localhost:${PORT}`);
+  });
+}
 
 module.exports = app;
