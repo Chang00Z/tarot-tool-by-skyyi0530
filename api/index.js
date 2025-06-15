@@ -29,10 +29,37 @@ app.post("/api/ask-openai", async (req, res) => {
     });
 
     const data = await response.json();
+
+    // Check for API errors in the response
+    if (!response.ok) {
+      const { ok, status, statusText } = response;
+      console.error("OpenAI API 回傳錯誤：", {
+        // restful API 的標準錯誤處理格式
+        response: { ok, status, statusText },
+        // openAI 自定義的錯誤訊息
+        customError: data.error,
+      });
+      return res.status(409).json({
+        reply: "OpenAI API 錯誤",
+        error: data.error,
+      });
+    }
+
+    // Check if the expected data structure exists
+    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+      console.error("OpenAI API 回傳格式異常：", data);
+      return res.status(406).json({
+        reply: "OpenAI API 回傳格式異常",
+      });
+    }
+
     res.json({ reply: data.choices[0].message.content });
   } catch (error) {
-    console.error("OpenAI API 錯誤：", error);
-    res.status(500).json({ reply: "後端錯誤，請稍後再試。" });
+    // 網路問題或其他非 API 回傳的錯誤
+    console.error("其他錯誤：", error);
+    res.status(500).json({
+      reply: "後端錯誤，請稍後再試。",
+    });
   }
 });
 
