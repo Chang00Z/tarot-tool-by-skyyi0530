@@ -1,31 +1,23 @@
 {
-  "name": "tarot-tool",
-  "version": "1.0.0",
-  "description": "塔羅抽牌工具",
-  "main": "script.js",
+  "name": "nextjs-demo",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon api/index.js"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skyyi0530/tarot-tool.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/skyyi0530/tarot-tool/issues"
-  },
-  "homepage": "https://github.com/skyyi0530/tarot-tool#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "node-fetch": "^3.3.2"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.3.4"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.4",
+    "@eslint/eslintrc": "^3"
   }
 }
