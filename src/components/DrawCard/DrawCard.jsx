@@ -2,6 +2,7 @@
 import { useState } from "react";
 import cards from "@/data/cards.json";
 import { Result } from "../Result/Result";
+import style from "./DrawCard.module.css";
 
 export default function DrawCard() {
   // TODO: 讓使用者自行輸入問題
@@ -21,9 +22,11 @@ export default function DrawCard() {
   }
 
   return (
-    <div>
+    <div className={style.container}>
       <p>請點擊下方按鈕抽牌</p>
-      <button onClick={drawCard}>{card ? "重抽" : "抽牌"}</button>
+      <button onClick={drawCard} className={style.button}>
+        {card ? "重抽" : "抽牌"}
+      </button>
       {card && (
         <Result
           cardSrc={card.image}
