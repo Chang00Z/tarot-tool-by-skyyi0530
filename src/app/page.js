@@ -1,9 +1,5 @@
-import { Result } from "@/components/Result/Result";
+import DrawCard from "@/components/DrawCard/DrawCard";
 
 export default function Home() {
-  return (
-    <div>
-      <Result />
-    </div>
-  );
+  return <DrawCard />;
 }

@@ -2,6 +2,7 @@
   text-align: center;
   width: 180px;
   padding: 1rem;
+  color: #e4dbf2; /* 文字為柔紫 */
 }
 
 .cardArea img {
@@ -14,7 +15,6 @@
 .cardArea p {
   margin-top: 0.75rem;
   font-size: 1rem;
-  color: #e4dbf2; /* 文字為柔紫 */
 }
 
 .userQuestionDisplay {

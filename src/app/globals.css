@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+body {
+  font-family: "Noto Serif TC", serif;
+  background: linear-gradient(to bottom, #1a132f, #0f0c1c),
+    url("data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCBmaWxsPSIjMDAwMDE4IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+CiAgPGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjgiPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIzMCIgcj0iMS41Ii8+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjYwIiByPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSI4MCIgY3k9IjIwIiByPSIxLjIiLz4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjkwIiByPSIxLjMiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjQwIiByPSIxIi8+CiAgICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSI3MCIgcj0iMS41Ii8+CiAgICA8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxMTAiIHI9IjEiLz4KICAgIDxjaXJjbGUgY3g9IjQwMCIgY3k9IjE1MCIgcj0iMS40Ii8+CiAgICA8Y2lyY2xlIGN4PSI1MDAiIGN5PSIyMDAiIHI9IjEuMyIvPgogIDwvZz4KPC9zdmc+");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /*保持水平置中*/
+  flex-direction: column; /*主軸方向設定為 column（由上而下排列）*/
+  justify-content: center; /*置中抽牌後的畫面，避免內容偏上*/
+  min-height: 100vh; /*設定最小寬度，避免抽牌後內容被壓縮*/
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto; /*避免內容撐爆畫面時失去置中效果*/
+
+  color: white;
+}
