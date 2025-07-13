@@ -1,3 +1,4 @@
+"use client";
 import styles from "./Result.module.css";
 
 export function Result({ cardSrc, cardName, cardMeaning, question }) {

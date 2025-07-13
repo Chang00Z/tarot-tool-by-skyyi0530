@@ -20,4 +20,6 @@ body {
   box-sizing: border-box;
   position: relative;
   overflow-y: auto; /*避免內容撐爆畫面時失去置中效果*/
+
+  color: white;
 }
