@@ -1,0 +1,23 @@
+.cardArea {
+  text-align: center;
+  width: 180px;
+  padding: 1rem;
+}
+
+.cardArea img {
+  height: auto;
+  margin-top: 0.5rem;
+  border: 4px solid #c1a6f2; /* 卡片邊框 */
+  border-radius: 1rem;
+  animation: fadeInOpacity 0.5s ease-in-out; /* 透明淡入動畫 */
+}
+.cardArea p {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #e4dbf2; /* 文字為柔紫 */
+}
+
+.userQuestionDisplay {
+  font-size: 0.95rem;
+  padding: 0.75rem;
+}
