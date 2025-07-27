@@ -2,11 +2,11 @@
 import { useState } from "react";
 import cards from "@/data/cards.json";
 import { Result } from "../Result/Result";
+import { QuestionInput } from "../QuestionInput/QuestionInput";
 import style from "./DrawCard.module.css";
 
 export default function DrawCard() {
-  // TODO: 讓使用者自行輸入問題
-  const question = null; // "下半年的工作運勢";
+  const [question, setQuestion] = useState("");
   const [card, setCard] = useState(null);
 
   function drawCard() {
@@ -23,6 +23,10 @@ export default function DrawCard() {
 
   return (
     <div className={style.container}>
+      <QuestionInput
+        value={question}
+        onChange={(event) => setQuestion(event.target.value)}
+      />
       <p>請點擊下方按鈕抽牌</p>
       <button onClick={drawCard} className={style.button}>
         {card ? "重抽" : "抽牌"}
