@@ -15,7 +15,6 @@ export default function DrawCard() {
     const selectedCard = {
       ...card,
       meaning: isReversed ? card.reversed : card.upright,
-      position: isReversed ? "逆位" : "正位",
       isReversed,
     };
     setCard(selectedCard);
@@ -36,6 +35,8 @@ export default function DrawCard() {
           cardSrc={card.image}
           cardName={card.name}
           cardMeaning={card.meaning}
+          cardPosition={card.position}
+          isReversed={card.isReversed}
           question={question}
         />
       )}
