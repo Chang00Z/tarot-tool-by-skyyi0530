@@ -35,7 +35,6 @@ export default function DrawCard() {
           cardSrc={card.image}
           cardName={card.name}
           cardMeaning={card.meaning}
-          cardPosition={card.position}
           isReversed={card.isReversed}
           question={question}
         />
