@@ -36,6 +36,7 @@ export async function GET(request) {
       return Response.json({ error: "OpenAI API error." }, { status: 500 });
     }
   } catch (err) {
+    console.error(err);
     return Response.json(
       { error: err.message || "Server error." },
       { status: 500 }
