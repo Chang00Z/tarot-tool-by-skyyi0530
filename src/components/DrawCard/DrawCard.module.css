@@ -7,24 +7,3 @@
   padding: 2rem;
   gap: 1rem;
 }
-
-.button {
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: #7e57c2;
-  color: white;
-  /* 滑鼠樣式 */
-  cursor: pointer;
-  /* 按鈕描邊 */
-  border: 1px solid #cbb3ff;
-  /* hover 動畫過度效果：變色＋發光 */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.button:hover {
-  background-color: #9f76ec;
-  box-shadow: 0 0 8px rgba(200, 170, 255, 0.5);
-}
