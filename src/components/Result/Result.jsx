@@ -14,7 +14,7 @@ export function Result({
       <img
         src={cardSrc}
         alt={`抽出的牌：${cardName}${isReversed ? "（逆位）" : ""}`}
-        className={isReversed ? "rotate-180" : ""}
+        className={isReversed ? styles.rotate180 : ""}
       />
       <h2 id="card-title">{cardName}</h2>
       <p>{cardMeaning}</p>
