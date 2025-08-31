@@ -1,3 +1,7 @@
+.rotate180 {
+  transform: rotate(180deg);
+}
+
 .cardArea {
   text-align: center;
   width: 180px;
