@@ -10,7 +10,7 @@ export default function DrawCard() {
   const [card, setCard] = useState(null);
 
   return (
-    <div className={style.container}>
+    <main className={style.container} tabIndex={-1}>
       <QuestionInput
         value={question}
         onChange={(event) => setQuestion(event.target.value)}
@@ -25,6 +25,6 @@ export default function DrawCard() {
           question={question}
         />
       )}
-    </div>
+    </main>
   );
 }

@@ -49,10 +49,10 @@ export function AiExplain({ question, cardName, cardMeaning, isReversed }) {
   }, [question, cardName, cardMeaning, isReversed]);
 
   if (isLoading) {
-    return <span>載入中...</span>;
+    return <span role="status">載入中...</span>;
   }
   if (!!error) {
-    return <span>無法取得解釋，請再試一次</span>;
+    return <span role="status">無法取得解釋，請再試一次</span>;
   }
 
   return success;
