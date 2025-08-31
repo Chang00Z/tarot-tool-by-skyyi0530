@@ -10,13 +10,13 @@ export function Result({
   question,
 }) {
   return (
-    <div className={styles.cardArea}>
+    <section className={styles.cardArea} aria-labelledby="card-title">
       <img
         src={cardSrc}
-        alt="抽出的牌"
+        alt={`抽出的牌：${cardName}${isReversed ? "（逆位）" : ""}`}
         className={isReversed ? "rotate-180" : ""}
       />
-      <p>{cardName}</p>
+      <h2 id="card-title">{cardName}</h2>
       <p>{cardMeaning}</p>
       {question && <div className={styles.userQuestionDisplay}>{question}</div>}
       <AiExplain
@@ -25,6 +25,6 @@ export function Result({
         isReversed={isReversed}
         question={question}
       />
-    </div>
+    </section>
   );
 }

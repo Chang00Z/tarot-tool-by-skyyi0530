@@ -10,6 +10,8 @@ export const QuestionInput = ({ value, onChange }) => {
         placeholder="例如：我該換工作嗎"
         value={value}
         onChange={onChange}
+        rows={3}
+        aria-required="true"
       />
     </div>
   );
