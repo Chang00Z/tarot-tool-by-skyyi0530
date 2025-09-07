@@ -1,0 +1,76 @@
+.menuWrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  pointer-events: auto; /*確保點擊選單時不會被其他內容擋住*/
+}
+
+.menuButton {
+  font-size: 1.5rem;
+  color: #e5d2ff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.caret {
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid #1c132b;
+}
+
+.menuPanel {
+  position: absolute;
+  top: 2.2rem;
+  right: 0;
+  background: #1c132b;
+  border: 1px solid #6a4fbf;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: opacity 0.3 ease, transform 0.3s ease;
+  transform-origin: top right;
+  /* 避免手機點擊困難，增加最小寬度與內距 */
+  min-width: 160px;
+  padding: 0.25rem 0;
+  z-index: 10000; /*確保選單永遠在最上層*/
+  display: none;
+}
+
+.menuWrapper:hover .menuPanel {
+  display: block;
+}
+
+.menuCaret {
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid #1c132b;
+}
+
+.menuPanel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuPanel li {
+  padding: 0.75rem 1.25rem;
+  color: #e5d2ff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.menuPanel li:hover {
+  background-color: #2e1c48;
+}
