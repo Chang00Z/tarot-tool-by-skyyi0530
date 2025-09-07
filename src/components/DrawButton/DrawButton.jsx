@@ -16,7 +16,7 @@ export function DrawButton({ isDrawn, onDraw }) {
 
   return (
     <>
-      <p>請點擊下方按鈕抽牌</p>
+      {!isDrawn && <p>請點擊下方按鈕抽牌</p>}
       <button onClick={drawCard} className={style.button} type="button">
         {isDrawn ? "重抽" : "抽牌"}
       </button>
