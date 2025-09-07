@@ -18,7 +18,11 @@ export function Result({
       />
       <h2 id="card-title">{cardName}</h2>
       <p>{cardMeaning}</p>
-      {question && <div className={styles.userQuestionDisplay}>{question}</div>}
+      {question && (
+        <div className={styles.userQuestionDisplay}>
+          你問的是：「{question}」
+        </div>
+      )}
       <AiExplain
         cardName={cardName}
         cardMeaning={cardMeaning}
