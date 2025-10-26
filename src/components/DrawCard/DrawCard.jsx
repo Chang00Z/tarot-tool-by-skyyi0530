@@ -7,9 +7,12 @@ import style from "./DrawCard.module.css";
 import RoleSelect from "../RoleSelect/RoleSelect";
 import { Title } from "../Title/Title";
 import Menu from "../Menu/Menu";
+import { useSyncedSearchParam } from "@/hooks/useSyncedSearchParam";
+import { useNextSearchParam } from "@/hooks/useNextSearchParam";
 
 export default function DrawCard() {
-  const [role, setRole] = useState(null);
+  // const [role, setRole] = useSyncedSearchParam("setting-role", null);
+  const [role, setRole] = useNextSearchParam("setting-role", null);
   const [question, setQuestion] = useState("");
   const [card, setCard] = useState(null);
 
