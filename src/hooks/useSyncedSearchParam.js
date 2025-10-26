@@ -47,9 +47,8 @@ export function useSyncedSearchParam(key, defaultValue) {
       } else {
         params.set(key, newValue); // 否則設定新值
       }
-      // 用 replaceState 只改網址，不會刷新頁面
       const newUrl = `${window.location.pathname}?${params.toString()}`;
-      window.history.replaceState({}, "", newUrl);
+      window.history.pushState({}, "", newUrl);
     },
     [key]
   );
